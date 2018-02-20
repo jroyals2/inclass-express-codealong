@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 
 const index = require('./routes/index')
 const companyController = require('./controllers/companyController')
+const sodaController =  require('./controllers/companyController')
 
 const app = express()
 
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', index)
 app.use('/companies', companyController)
+app.use('/companies/:companyId/sodas', sodaController)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

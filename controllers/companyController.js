@@ -12,6 +12,23 @@ router.get('/', (req, res) => {
     })
 })
 
+
+router.get('/new', (req, res) => {
+    res.render('company/new')
+})
+
+router.post('/', (req, res) => {
+    const newCompany = new Company({
+        name: req.body.name,
+        location:  req.body.location
+    })
+    newCompany.save()
+    .then((savedCompany) => {
+        console.log(savedCompany)
+        res.redirect(`/companies/${savedCompany._id}`)
+    })
+})
+
 router.get('/:id', (req, res) => {
     Company.findById(req.params.id).then((company) => {
         res.render('company/show', {
