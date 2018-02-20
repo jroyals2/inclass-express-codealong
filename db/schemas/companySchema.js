@@ -8,5 +8,4 @@ const companySchema = new Schema ({
     sodas: [sodaSchema]
 })
 
-
 module.exports = companySchema
