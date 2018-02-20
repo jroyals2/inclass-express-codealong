@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const sodaSchema = require('./db/schemas/sodaSchema')
+const sodaSchema = require('../db/schemas/sodaSchema')
 
 const Soda = mongoose.model('soda', sodaSchema)
 
